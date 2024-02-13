@@ -18,4 +18,8 @@ export class HeroesService {
   deleteHeroById(id: number) {
     return this.http.delete<Hero[]>(`${this.apiUrl}/heroes/${id}`);
   }
+
+  addNewHero(hero: Hero) {
+    return this.http.post(`${this.apiUrl}/heroes`, hero);
+  }
 }

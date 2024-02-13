@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from './heroes.service';
 import { Hero } from './interface/heroes.interface';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,31 +10,41 @@ import { Hero } from './interface/heroes.interface';
 })
 export class AppComponent implements OnInit {
   public heroes: Hero[] = [];
-  rowsPerPageOptions = [5, 10];
-  rows = 10;
-  searchTerm: string = '';
+  public newHero!: Hero;
+  public displayAddHeroModal: boolean = false;
 
-  constructor(private _heroesService: HeroesService) {}
+  heroForm!: FormGroup;
+
+  constructor(private fb: FormBuilder, private _heroesService: HeroesService) {}
 
   ngOnInit(): void {
-    this._heroesService.getAllHeroes()
-      .subscribe(heroes => this.heroes = heroes)
+    this.initializeForm();
   }
 
-  deleteHeroe(hero: Hero) {
-    this._heroesService.deleteHeroById(hero.id)
-      .subscribe(() => this._heroesService.getAllHeroes()
-      .subscribe(heroes => this.heroes = heroes))
+  private initializeForm() {
+    this.heroForm = this.fb.group({
+      name: ['', Validators.required],
+      age: ['', [Validators.required, Validators.min(0)]],
+      creator: ['', Validators.required],
+      curiosity: ['']
+    });
   }
 
-  filterHeroes() {
-    return this.heroes.filter(hero =>
-      hero.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+  showAddHeroModal() {
+    this.displayAddHeroModal = true;
   }
 
-  onPage(event: any) {
-    console.log('EVENT', event)
-    this.rows = event.rows;
+  addNewHero() {
+    this._heroesService.addNewHero(this.heroForm.getRawValue())
+      .subscribe(res => {
+        this._heroesService.getAllHeroes()
+        .subscribe(heroes => this.heroes = heroes)
+      });
+    this.heroForm.reset();
+    this.displayAddHeroModal = false;
+  }
+
+  updateHero() {
+
   }
 }

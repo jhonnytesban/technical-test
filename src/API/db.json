@@ -139,6 +139,27 @@
       "age": 30,
       "creator": "Roy Thomas, Gene Colan",
       "curiosity": "Posee poderes cósmicos y puede transformarse en un ser superpoderoso."
+    },
+    {
+      "id": "3b33",
+      "name": "ww",
+      "age": 11,
+      "creator": "ºº",
+      "curiosity": "rr"
+    },
+    {
+      "id": "34d0",
+      "name": "aa",
+      "age": 22,
+      "creator": "ss",
+      "curiosity": "dd"
+    },
+    {
+      "id": "e3ee",
+      "name": "bb",
+      "age": 44,
+      "creator": "33",
+      "curiosity": "fadf"
     }
   ]
 }
