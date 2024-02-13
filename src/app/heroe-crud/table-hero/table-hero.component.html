@@ -1,4 +1,5 @@
 <div>
+  <button pButton label="Añadir Héroe" [routerLink]="'create'"></button>
   <input pInputText placeholder="Buscar héroes..." [(ngModel)]="searchTerm" />
 </div>
 <p-table
@@ -27,7 +28,7 @@
       <td>{{ hero.creator }}</td>
       <td>{{ hero.curiosity }}</td>
       <td>
-        <button pButton icon="pi pi-pencil"></button>
+        <button pButton icon="pi pi-pencil" (click)="updateHero(hero.id)"></button>
       </td>
       <td>
         <button pButton class="p-button-danger" icon="pi pi-trash" (click)="deleteHeroe(hero)"></button>

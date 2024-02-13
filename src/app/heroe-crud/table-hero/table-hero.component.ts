@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../interface/heroes.interface';
 import { HeroesService } from '../../heroes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'table-hero',
@@ -13,7 +14,7 @@ export class TableHeroComponent implements OnInit {
   public rows = 10;
   public searchTerm: string = '';
 
-  constructor(private _heroesService: HeroesService) {}
+  constructor(private _heroesService: HeroesService, private router: Router) {}
 
   ngOnInit(): void {
     this._heroesService.getAllHeroes()
@@ -34,5 +35,9 @@ export class TableHeroComponent implements OnInit {
 
   onPage(event: {first: number, rows: number}) {
     this.rows = event.rows;
-  }   
+  }
+
+  updateHero(id: number) {
+    this.router.navigate([`update/${id}`]);
+  }
 }

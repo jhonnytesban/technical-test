@@ -14,12 +14,22 @@ export class HeroesService {
   getAllHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(`${this.apiUrl}/heroes`);
   }
+
+  getHeroeById(id: number): Observable<Hero> {
+    return this.http.get<Hero>(`${this.apiUrl}/heroes/${id}`);
+  }
   
   deleteHeroById(id: number) {
     return this.http.delete<Hero[]>(`${this.apiUrl}/heroes/${id}`);
   }
 
-  addNewHero(hero: Hero) {
-    return this.http.post(`${this.apiUrl}/heroes`, hero);
+  addNewHero(body: Hero) {
+    return this.http.post(`${this.apiUrl}/heroes`, body);
   }
+
+  updateHero(id: number, body: Hero) {
+    return this.http.put(`${this.apiUrl}/heroes/${id}`, body)
+  }
+
+
 }
