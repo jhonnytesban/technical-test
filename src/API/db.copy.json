@@ -1,124 +1,144 @@
 {
   "heroes": [
     {
+      "id": 1,
       "name": "Superman",
       "age": 35,
       "creator": "Jerry Siegel, Joe Shuster",
       "curiosity": "Es vulnerable a la kryptonita."
     },
     {
+      "id": 2,
       "name": "Batman",
       "age": 40,
       "creator": "Bob Kane, Bill Finger",
       "curiosity": "No tiene poderes superhumanos, pero es un detective y estratega excepcional."
     },
     {
+      "id": 3,
       "name": "Wonder Woman",
       "age": 3000,
       "creator": "William Moulton Marston",
       "curiosity": "Proviene de la isla de Themyscira y es la princesa de las Amazonas."
     },
     {
+      "id": 4,
       "name": "Spider-Man",
       "age": 28,
       "creator": "Stan Lee, Steve Ditko",
       "curiosity": "Obtuvo sus poderes después de ser mordido por una araña radiactiva."
     },
     {
+      "id": 5,
       "name": "Iron Man",
       "age": 45,
       "creator": "Stan Lee, Larry Lieber, Don Heck, Jack Kirby",
       "curiosity": "Tony Stark, su alter ego, es un genio inventor y multimillonario."
     },
     {
+      "id": 6,
       "name": "Captain America",
       "age": 100,
       "creator": "Joe Simon, Jack Kirby",
       "curiosity": "Fue congelado durante la Segunda Guerra Mundial y luego descongelado en la era moderna."
     },
     {
+      "id": 7,
       "name": "Hulk",
       "age": 35,
       "creator": "Stan Lee, Jack Kirby",
       "curiosity": "Se transforma en Hulk cuando experimenta fuertes emociones como la ira."
     },
     {
+      "id": 8,
       "name": "Black Widow",
       "age": 32,
       "creator": "Stan Lee, Don Rico, Don Heck",
       "curiosity": "Es una hábil espía y luchadora cuerpo a cuerpo."
     },
     {
+      "id": 9,
       "name": "Thor",
       "age": 1500,
       "creator": "Stan Lee, Larry Lieber, Jack Kirby",
       "curiosity": "Es el dios del trueno y posee el martillo encantado Mjolnir."
     },
     {
+      "id": 10,
       "name": "Black Panther",
       "age": 35,
       "creator": "Stan Lee, Jack Kirby",
       "curiosity": "Es el rey de Wakanda y posee habilidades mejoradas por la planta en forma de corazón."
     },
     {
+      "id": 11,
       "name": "Doctor Strange",
       "age": 45,
       "creator": "Stan Lee, Steve Ditko",
       "curiosity": "Es un hechicero maestro y protector de la realidad."
     },
     {
+      "id": 12,
       "name": "Green Lantern",
       "age": 30,
       "creator": "John Broome, Gil Kane",
       "curiosity": "Obtiene poder de un anillo que le otorga habilidades basadas en su fuerza de voluntad."
     },
     {
+      "id": 13,
       "name": "Aquaman",
       "age": 35,
       "creator": "Mort Weisinger, Paul Norris",
       "curiosity": "Es el rey de Atlantis y tiene la capacidad de comunicarse con criaturas marinas."
     },
     {
+      "id": 14,
       "name": "Wolverine",
       "age": 150,
       "creator": "Roy Thomas, Len Wein, John Romita Sr.",
       "curiosity": "Tiene garras retráctiles de adamantium y un factor de curación regenerativa."
     },
     {
+      "id": 15,
       "name": "Storm",
       "age": 35,
       "creator": "Len Wein, Dave Cockrum",
       "curiosity": "Controla el clima y es miembro de los X-Men."
     },
     {
+      "id": 16,
       "name": "Deadpool",
       "age": 30,
       "creator": "Fabian Nicieza, Rob Liefeld",
       "curiosity": "Es conocido por su humor irreverente y su capacidad de regeneración."
     },
     {
+      "id": 17,
       "name": "Ant-Man",
       "age": 40,
       "creator": "Stan Lee, Larry Lieber, Jack Kirby",
       "curiosity": "Puede cambiar de tamaño y comunicarse con insectos a través de su casco."
     },
     {
+      "id": 18,
       "name": "The Flash",
       "age": 28,
       "creator": "Gardner Fox, Harry Lampert",
       "curiosity": "Puede correr a velocidades sobrehumanas."
     },
     {
+      "id": 19,
       "name": "Green Arrow",
       "age": 35,
       "creator": "Mort Weisinger, George Papp",
       "curiosity": "Es un arquero experto y luchador contra el crimen sin superpoderes."
     },
     {
+      "id": 20,
       "name": "Captain Marvel",
       "age": 30,
-    "creator": "Roy Thomas, Gene Colan",
-    "curiosity": "Posee poderes cósmicos y puede transformarse en un ser superpoderoso."
+      "creator": "Roy Thomas, Gene Colan",
+      "curiosity": "Posee poderes cósmicos y puede transformarse en un ser superpoderoso."
     }
   ]
 }
