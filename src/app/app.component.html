@@ -1,3 +1,4 @@
 <div class="container">
+  <p-selectButton [options]="languageOptions" [(ngModel)]="selectedLanguage" (onChange)="changeLanguage()"></p-selectButton>
   <router-outlet></router-outlet>
 </div>

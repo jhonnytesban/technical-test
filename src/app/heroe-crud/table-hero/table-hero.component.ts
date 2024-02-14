@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../interface/heroes.interface';
-import { HeroesService } from '../../heroes.service';
 import { Router } from '@angular/router';
 import { ConfirmationService } from 'primeng/api';
+import { HeroesService } from '../heroes.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'table-hero',
@@ -15,7 +16,7 @@ export class TableHeroComponent implements OnInit {
   public rows = 5;
   public searchTerm: string = '';
 
-  constructor(private _heroesService: HeroesService, private router: Router, private confirmationService: ConfirmationService) {}
+  constructor(private _heroesService: HeroesService, private router: Router, private confirmationService: ConfirmationService, private translate: TranslateService) {}
 
   ngOnInit(): void {
     this._heroesService.getAllHeroes().subscribe(heroes => this.heroes = heroes);
@@ -29,13 +30,15 @@ export class TableHeroComponent implements OnInit {
   confirmDelete(event: Event, hero: Hero) {
     this.confirmationService.confirm({
         target: event.target as EventTarget,
-        message: '¿Quieres eliminar este héroe?',
-        header: 'Comfirmar',
+        message: this.translate.instant('confirmDialog.messageDelete'),
+        header: this.translate.instant('confirmDialog.confirm'),
         icon: 'pi pi-info-circle',
         acceptButtonStyleClass:"p-button-danger p-button-text",
         rejectButtonStyleClass:"p-button-text p-button-text",
         acceptIcon:"none",
         rejectIcon:"none",
+        acceptLabel: this.translate.instant('confirmDialog.yes'),
+
 
         accept: () => {
           this._heroesService.deleteHeroById(hero.id)

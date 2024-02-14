@@ -1,0 +1,28 @@
+{
+  "listHeroes": "Lista de héroes",
+  "addHero": "Añadir héroe",
+  "titleCreateHero": "Crear Superhéroe",
+  "titleUpdateHero": "Actualizar Superhéroe",
+  "searchHeroes": "Buscar heroes",
+  "infoHero": {
+    "name": "nombre",
+    "age": "edad",
+    "creator": "creador",
+    "curiosity": "curiosidad",
+    "edit": "editar",
+    "delete": "borrar"
+  },
+  "actions": {
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+  "confirmDialog": {
+    "confirm": "Confirmar",
+    "messageDelete": "¿Quieres eliminar este héroe?",
+    "yes": "Sí"
+  },
+  "languages": {
+    "spanish": "Español",
+    "english": "Inglés"
+  }
+}

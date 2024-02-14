@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HeroesService } from '../../heroes.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HeroesService } from '../heroes.service';
 
 @Component({
   selector: 'app-add-hero',
@@ -11,13 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddHeroComponent implements OnInit{
   public heroForm!: FormGroup;
   public heroId!: number;
-  public title: string = 'Crear Superhéroe';
 
   constructor(
       private fb: FormBuilder,
       private _heroesService: HeroesService,
       private router: Router,
-      private route: ActivatedRoute
+      private route: ActivatedRoute,
     ) {}
 
   ngOnInit(): void {
@@ -27,7 +26,6 @@ export class AddHeroComponent implements OnInit{
     if (this.heroId) {
       this._heroesService.getHeroeById(this.heroId).subscribe(hero => {
         this.heroForm.patchValue(hero)
-        this.title = `Actualizar héroe ${hero.name}`
       });
     }
   }

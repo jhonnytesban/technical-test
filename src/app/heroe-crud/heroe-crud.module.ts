@@ -11,6 +11,7 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService } from 'primeng/api';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -29,7 +30,8 @@ import { ConfirmationService } from 'primeng/api';
     RouterModule,
     SkeletonModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    TranslateModule
   ],
   exports: [TableHeroComponent, AddHeroComponent],
   providers: [ConfirmationService]
