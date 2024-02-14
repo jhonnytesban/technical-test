@@ -1,4 +1,4 @@
-<button pButton label="Ir al listado" [routerLink]="'/'"></button>
+<h1>{{ title }}</h1>
 <form [formGroup]="heroForm">
   <div class="p-fluid">
     <div class="p-field">
@@ -32,5 +32,5 @@
   </div>
 
 </form>
-<button pButton [disabled]="heroForm.invalid" label="Guardar" (click)="addNewHero()"></button>
-<button pButton  label="Cancelar" (click)="backToList()"></button>
+<button pButton class="btn" [disabled]="heroForm.invalid" label="Guardar" (click)="addNewHero()"></button>
+<button pButton  class="btn" label="Cancelar" (click)="backToList()"></button>

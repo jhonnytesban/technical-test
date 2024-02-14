@@ -1,7 +1,9 @@
+<h1>Lista de Superhéroes</h1>
 <div>
-  <button pButton label="Añadir Héroe" [routerLink]="'create'"></button>
-  <input pInputText placeholder="Buscar héroes..." [(ngModel)]="searchTerm" />
+  <p-button class="btn" label="Añadir Héroe" [link]="true" [routerLink]="'create'"></p-button>
+  <input class="btn" pInputText placeholder="Buscar héroes..." [(ngModel)]="searchTerm" />
 </div>
+<p-confirmDialog></p-confirmDialog>
 <p-table
   [value]="filterHeroes()"
   [rows]="rows"
@@ -9,6 +11,7 @@
   [pageLinks]="3"
   [rowsPerPageOptions]="rowsPerPageOptions"
   [globalFilterFields]="['name']"
+  responsiveLayout="scroll"
   (onPage)="onPage($event)"
   >
   <ng-template pTemplate="header">
@@ -31,7 +34,7 @@
         <button pButton icon="pi pi-pencil" (click)="updateHero(hero.id)"></button>
       </td>
       <td>
-        <button pButton class="p-button-danger" icon="pi pi-trash" (click)="deleteHeroe(hero)"></button>
+        <button pButton class="p-button-danger" icon="pi pi-trash" (click)="confirmDelete($event, hero)"></button>
       </td>
     </tr>
   </ng-template>

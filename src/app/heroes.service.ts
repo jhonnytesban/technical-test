@@ -19,16 +19,16 @@ export class HeroesService {
     return this.http.get<Hero>(`${this.apiUrl}/heroes/${id}`);
   }
   
-  deleteHeroById(id: number) {
-    return this.http.delete<Hero[]>(`${this.apiUrl}/heroes/${id}`);
+  deleteHeroById(id: number): Observable<Hero> {
+    return this.http.delete<Hero>(`${this.apiUrl}/heroes/${id}`);
   }
 
-  addNewHero(body: Hero) {
-    return this.http.post(`${this.apiUrl}/heroes`, body);
+  addNewHero(body: Hero): Observable<Hero> {
+    return this.http.post<Hero>(`${this.apiUrl}/heroes`, body);
   }
 
-  updateHero(id: number, body: Hero) {
-    return this.http.put(`${this.apiUrl}/heroes/${id}`, body)
+  updateHero(id: number, body: Hero): Observable<Hero> {
+    return this.http.put<Hero>(`${this.apiUrl}/heroes/${id}`, body);
   }
 
 

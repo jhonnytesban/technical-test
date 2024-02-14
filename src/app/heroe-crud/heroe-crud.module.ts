@@ -7,6 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { AddHeroComponent } from './add-hero/add-hero.component';
 import { RouterModule } from '@angular/router';
+import { SkeletonModule } from 'primeng/skeleton';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService } from 'primeng/api';
 
 
 
@@ -22,8 +26,12 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     InputTextModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    SkeletonModule,
+    ConfirmDialogModule,
+    ToastModule
   ],
-  exports: [TableHeroComponent, AddHeroComponent]
+  exports: [TableHeroComponent, AddHeroComponent],
+  providers: [ConfirmationService]
 })
 export class HeroeCrudModule { }
