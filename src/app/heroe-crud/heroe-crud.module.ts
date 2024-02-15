@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 import { SkeletonModule } from 'primeng/skeleton';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { TranslateModule } from '@ngx-translate/core';
 
 
@@ -34,6 +34,6 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule
   ],
   exports: [TableHeroComponent, AddHeroComponent],
-  providers: [ConfirmationService]
+  providers: [ConfirmationService, MessageService]
 })
 export class HeroeCrudModule { }

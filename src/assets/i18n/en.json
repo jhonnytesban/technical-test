@@ -19,10 +19,12 @@
   "confirmDialog": {
     "confirm": "Confirm",
     "messageDelete": "Do you want to eliminate this hero?",
+    "messageError": "This hero does not exist. Back to list",
     "yes": "Yes"
   },
   "languages": {
     "spanish": "Spanish",
     "english": "English"
-  }
+  },
+  "errorBbdd": "It is necessary to connect the dbdd with *npm run back, in another terminal"
 }

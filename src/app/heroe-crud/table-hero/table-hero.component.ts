@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../interface/heroes.interface';
 import { Router } from '@angular/router';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { HeroesService } from '../heroes.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core'
+import { take } from 'rxjs';
 
 @Component({
   selector: 'table-hero',
@@ -16,18 +17,27 @@ export class TableHeroComponent implements OnInit {
   public rows = 5;
   public searchTerm: string = '';
 
-  constructor(private _heroesService: HeroesService, private router: Router, private confirmationService: ConfirmationService, private translate: TranslateService) {}
+  constructor(
+    private _heroesService: HeroesService,
+    private router: Router,
+    private confirmationService: ConfirmationService,
+    private translate: TranslateService,
+    private messageService: MessageService
+  ) {}
 
-  ngOnInit(): void {
-    this._heroesService.getAllHeroes().subscribe(heroes => this.heroes = heroes);
+  ngOnInit() {
+    this._heroesService.getAllHeroes().subscribe({
+      next: (heroes) => this.heroes = heroes,
+      error: () => this.showError()
+    });
   }
 
-  filterHeroes() {
+  filterHeroes(): Hero[] {
     return this.heroes.filter(hero => hero.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
 
-  confirmDelete(event: Event, hero: Hero) {
+  confirmDelete(event: Event, hero: Hero): void {
     this.confirmationService.confirm({
         target: event.target as EventTarget,
         message: this.translate.instant('confirmDialog.messageDelete'),
@@ -46,13 +56,17 @@ export class TableHeroComponent implements OnInit {
             .subscribe(heroes => this.heroes = heroes))
         }
     });
-}
+  }
 
-  onPage(event: {first: number, rows: number}) {
+  onPage(event: {first: number, rows: number}): void {
     this.rows = event.rows;
   }
 
-  updateHero(id: number) {
+  updateHero(id: number): void {
     this.router.navigate([`update/${id}`]);
+  }
+
+  showError() {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: this.translate.instant('errorBbdd') });
   }
 }
