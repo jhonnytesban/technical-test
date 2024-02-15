@@ -73,6 +73,19 @@ export class AddHeroComponent implements OnInit{
   }
   
   backToList(): void {
-    this.router.navigateByUrl('/');
+    this.confirmationService.confirm({
+      message: this.translate.instant('confirmDialog.messageInfoExit'),
+      header: this.translate.instant('confirmDialog.confirm'),
+      icon: 'pi pi-info-circle',
+      acceptButtonStyleClass:"p-button-danger p-button-text",
+      rejectButtonStyleClass:"p-button-text p-button-text",
+      acceptIcon:"none",
+      rejectIcon:"none",
+      acceptLabel: this.translate.instant('confirmDialog.yes'),
+
+      accept: () => {
+        this.router.navigateByUrl('/');
+      }
+  });
   }
 }

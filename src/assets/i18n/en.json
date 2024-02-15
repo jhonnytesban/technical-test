@@ -19,6 +19,7 @@
   "confirmDialog": {
     "confirm": "Confirm",
     "messageDelete": "Do you want to eliminate this hero?",
+    "messageInfoExit": "Are you sure you want to exit? You will return to the list and any changes will not be saved.",
     "messageError": "This hero does not exist. Back to list",
     "yes": "Yes"
   },
