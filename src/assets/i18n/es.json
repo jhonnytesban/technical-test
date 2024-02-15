@@ -26,5 +26,10 @@
     "spanish": "Español",
     "english": "Inglés"
   },
-  "errorBbdd": "Es necesario conectar la bbdd con *npm run back, en otra terminal"
+  "errorBbdd": "Es necesario conectar la bbdd con *npm run back, en otra terminal",
+  "formErrors": {
+    "requiredName": "El nombre es obligatorio",
+    "requiredAge": "La edad es obligatoria y debe ser un número mayor o igual a 0.",
+    "requiredCreator": "El creador es obligatorio."
+  }
 }

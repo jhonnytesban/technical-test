@@ -6,7 +6,7 @@
       <label for="name">{{ 'infoHero.name' | translate | titlecase }}</label>
       <input id="name" type="text" pInputText formControlName="name" />
       <div *ngIf="heroForm.get('name')?.invalid && heroForm.get('name')?.touched" class="p-error">
-        El nombre es obligatorio.
+        {{ 'formErrors.requiredName' | translate }}
       </div>
     </div>
 
@@ -14,7 +14,7 @@
       <label for="age">{{ 'infoHero.age' | translate | titlecase }}</label>
       <input id="age" type="number" pInputText formControlName="age" />
       <div *ngIf="heroForm.get('age')?.invalid && heroForm.get('age')?.touched" class="p-error">
-        La edad es obligatoria y debe ser un número mayor o igual a 0.
+        {{ 'formErrors.requiredAge' | translate }}
       </div>
     </div>
 
@@ -22,7 +22,7 @@
       <label for="creator">{{ 'infoHero.creator' | translate | titlecase }}</label>
       <input id="creator" type="text" pInputText formControlName="creator" />
       <div *ngIf="heroForm.get('creator')?.invalid && heroForm.get('creator')?.touched" class="p-error">
-        El creador es obligatorio.
+        {{ 'formErrors.requiredCreator' | translate }}
       </div>
     </div>
 
@@ -33,5 +33,5 @@
   </div>
 
 </form>
-<button pButton class="btn" [disabled]="heroForm.invalid" label="{{ 'actions.save' | translate }}" (click)="addNewHero()"></button>
-<button pButton  class="btn" label="{{ 'actions.cancel' | translate }}" (click)="backToList()"></button>
+<p-button class="btn" label="{{ 'actions.save' | translate }}" [disabled]="heroForm.invalid" (click)="addNewHero()"></p-button>
+<p-button class="btn" label="{{ 'actions.cancel' | translate }}" severity="secondary" (click)="backToList()"></p-button>

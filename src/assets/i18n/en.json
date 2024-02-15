@@ -26,5 +26,10 @@
     "spanish": "Spanish",
     "english": "English"
   },
-  "errorBbdd": "It is necessary to connect the dbdd with *npm run back, in another terminal"
+  "errorBbdd": "It is necessary to connect the dbdd with *npm run back, in another terminal",
+  "formErrors": {
+    "requiredName": "Name is required",
+    "requiredAge": "Age is required and must be a number greater than or equal to 0.",
+    "requiredCreator": "Creator is required."
+  }  
 }

@@ -6,6 +6,7 @@
 </div>
 <p-confirmDialog></p-confirmDialog>
 <p-table
+  [sortField]="'name'"
   [value]="filterHeroes()"
   [rows]="rows"
   [paginator]="true"
