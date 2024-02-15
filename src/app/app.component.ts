@@ -13,7 +13,7 @@ export class AppComponent {
     { label: 'Español', value: 'es' }
   ];
 
-  selectedLanguage: string = 'en'; 
+  selectedLanguage: string = 'es'; 
 
   constructor(private translationAppService: TranslationAppService) {
     this.translationAppService.init();

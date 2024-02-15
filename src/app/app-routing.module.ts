@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'update/:id',
     component: AddHeroComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
   }
 ];
 
